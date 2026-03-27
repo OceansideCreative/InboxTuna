@@ -20,6 +20,9 @@
   --off-white: #f5f0e5;
   --dark-text: #0b1a24;
   --body-text: #2a3f52;
+  --sonar-bg: #050e14;
+  --sonar-glow: #48e8d4;
+  --sonar-amber: #f0aa0c;
 
   --heavy: 'Barlow Condensed', 'Impact', sans-serif;
   --mono: 'Space Mono', monospace;
@@ -284,25 +287,25 @@ nav {
   text-transform: uppercase;
 }
 
+/* ── BOAT CANVAS (replaces tuna SVG) ── */
 .hero-right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.tuna-wrap {
+.boat-canvas-wrap {
   position: relative;
-  animation: tunaFloat 5s ease-in-out infinite;
-}
-@keyframes tunaFloat {
-  0%, 100% { transform: translateY(0px) rotate(-2deg); }
-  50% { transform: translateY(-12px) rotate(1deg); }
+  width: 100%;
+  height: 480px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 0.5s;
 }
 
-.tuna-wrap svg {
+.boat-canvas {
   width: 100%;
-  max-width: 460px;
-  filter: drop-shadow(5px 8px 0px rgba(5,10,15,0.3));
+  height: 100%;
+  display: block;
 }
 
 /* ── TICKER ── */
@@ -422,9 +425,7 @@ nav {
   margin-bottom: 1.5rem;
   letter-spacing: 0.01em;
 }
-.about-text h2 .hl {
-  color: var(--water);
-}
+.about-text h2 .hl { color: var(--water); }
 
 .about-text p {
   font-size: 1rem;
@@ -621,16 +622,22 @@ nav {
   color: var(--body-text);
 }
 
-/* ── WHY ── */
-.why {
+/* ── DEPTH TRANSITION ZONE ── */
+.depth-transition-zone {
+  height: 80px;
+  background: linear-gradient(180deg, var(--sand) 0%, #1a4a52 30%, #0f3540 60%, var(--navy) 100%);
+}
+
+/* ── WHY — DEEPER WATER ── */
+.why.sonar-zone {
   padding: 6rem 2.5rem;
-  background: var(--bone);
-  border-top: 4px solid var(--navy);
+  background: linear-gradient(180deg, var(--navy) 0%, #091620 100%);
+  border-top: none;
   position: relative;
   overflow: hidden;
 }
 
-.why::before {
+.why.sonar-zone::before {
   content: 'WHY';
   position: absolute;
   top: 50%;
@@ -639,148 +646,72 @@ nav {
   font-family: var(--heavy);
   font-size: clamp(8rem, 18vw, 18rem);
   font-weight: 900;
-  color: rgba(11, 26, 36, 0.02);
+  color: rgba(72, 232, 212, 0.015);
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
 }
 
-.why-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
+.why.sonar-zone .why-header .sec-tag {
+  background: rgba(72, 232, 212, 0.08);
+  color: var(--sonar-glow);
 }
 
-.why-header {
-  margin-bottom: 3rem;
-}
-
-.why-header .sec-tag {
-  background: rgba(196, 86, 26, 0.1);
-  color: var(--rust);
-}
-
-.why-header h2 {
-  font-family: var(--heavy);
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--navy);
-  line-height: 1;
-}
-.why-header h2 .hl { color: var(--water); }
-
-.why-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.25rem;
-}
-
-.why-card {
-  padding: 2rem;
-  background: var(--white);
-  border: 3px solid var(--navy);
-  box-shadow: 5px 5px 0px var(--navy);
-  transition: all 0.25s;
-}
-.why-card:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0px var(--navy);
-}
-
-.why-card h4 {
-  font-family: var(--heavy);
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--water-deep);
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.05em;
-}
-
-.why-card p {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: var(--body-text);
-}
-
-/* ── FOR WHO ── */
-.for-who {
-  padding: 5rem 2.5rem;
-  background: linear-gradient(175deg, var(--water-bright) 0%, var(--water) 40%, var(--water-deep) 100%);
-}
-
-.for-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.for-header {
-  margin-bottom: 2.5rem;
-}
-
-.for-header .sec-tag {
-  background: rgba(11, 26, 36, 0.35);
-  color: var(--amber-bright);
-}
-
-.for-header h2 {
-  font-family: var(--heavy);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 900;
-  text-transform: uppercase;
+.why.sonar-zone .why-header h2 {
   color: var(--white);
-  line-height: 1;
+}
+.why.sonar-zone .why-header h2 .hl {
+  color: var(--sonar-glow);
 }
 
-.for-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.why.sonar-zone .why-card {
+  background: rgba(255,255,255,0.03);
+  border: 2px solid rgba(72, 232, 212, 0.1);
+  box-shadow: none;
+}
+.why.sonar-zone .why-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(72, 232, 212, 0.25);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
-.for-card {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 1.5rem;
-  background: rgba(5, 15, 20, 0.35);
-  border: 2px solid rgba(255,255,255,0.08);
-  transition: all 0.3s;
-}
-.for-card:hover {
-  border-color: rgba(255,255,255,0.2);
-  background: rgba(5, 15, 20, 0.5);
-  transform: translateY(-2px);
+.why.sonar-zone .why-card h4 {
+  color: var(--sonar-glow);
 }
 
-.for-arrow {
-  flex-shrink: 0;
-  font-family: var(--heavy);
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--amber-bright);
-  line-height: 1.5;
+.why.sonar-zone .why-card p {
+  color: rgba(255,255,255,0.45);
 }
 
-.for-card p {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.75);
+/* ── FOR WHO — DEEP WATER ── */
+.for-who.deep-water {
+  background: linear-gradient(175deg, #091620 0%, #071018 40%, var(--sonar-bg) 100%);
 }
-.for-card strong { color: var(--white); }
 
-/* ── CTA ── */
-.cta {
+.for-who.deep-water .for-header .sec-tag {
+  background: rgba(240, 170, 12, 0.1);
+  color: var(--sonar-amber);
+}
+
+.for-who.deep-water .for-card {
+  background: rgba(72, 232, 212, 0.03);
+  border: 1px solid rgba(72, 232, 212, 0.06);
+}
+.for-who.deep-water .for-card:hover {
+  border-color: rgba(72, 232, 212, 0.15);
+  background: rgba(72, 232, 212, 0.06);
+}
+
+/* ── CTA — SONAR FISH FINDER ── */
+.sonar-cta-section {
   padding: 8rem 2.5rem;
-  background: var(--navy);
+  background: var(--sonar-bg);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.cta::before {
+.sonar-cta-section::before {
   content: 'BOOK A CALL';
   position: absolute;
   top: 50%;
@@ -789,18 +720,73 @@ nav {
   font-family: var(--heavy);
   font-size: clamp(6rem, 15vw, 17rem);
   font-weight: 900;
-  color: rgba(255,255,255,0.015);
+  color: rgba(72, 232, 212, 0.012);
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
 }
 
-.cta-inner {
-  position: relative;
+.sonar-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sonar-scan-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.03;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    rgba(72, 232, 212, 1) 3px,
+    rgba(72, 232, 212, 1) 4px
+  );
+}
+
+.sonar-depth-markers {
+  position: absolute;
+  right: 1.5rem;
+  top: 2rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
   z-index: 2;
 }
 
-.cta h2 {
+.sonar-depth-markers span {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: rgba(72, 232, 212, 0.2);
+  letter-spacing: 0.05em;
+}
+
+.sonar-readout {
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: rgba(240, 170, 12, 0.3);
+  line-height: 1.6;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sonar-cta-section .cta-inner {
+  position: relative;
+  z-index: 3;
+}
+
+.sonar-cta-section .cta-inner h2 {
   font-family: var(--heavy);
   font-size: clamp(2.8rem, 5.5vw, 5rem);
   font-weight: 900;
@@ -809,11 +795,13 @@ nav {
   line-height: 0.95;
   margin-bottom: 1.25rem;
 }
-.cta h2 .hl { color: var(--water-bright); }
+.sonar-cta-section .cta-inner h2 .hl {
+  color: var(--sonar-glow);
+}
 
-.cta p {
+.sonar-cta-section .cta-inner p {
   font-size: 1rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.35);
   max-width: 420px;
   margin: 0 auto 2.5rem;
 }
@@ -831,6 +819,8 @@ nav {
   display: inline-block;
   transition: all 0.25s;
   box-shadow: 5px 5px 0px rgba(240, 170, 12, 0.25);
+  position: relative;
+  z-index: 3;
 }
 .cta-btn:hover {
   background: var(--white);
@@ -841,8 +831,8 @@ nav {
 /* ── FOOTER ── */
 footer {
   padding: 2rem 2.5rem;
-  background: var(--navy);
-  border-top: 2px solid rgba(255,255,255,0.04);
+  background: var(--sonar-bg);
+  border-top: 2px solid rgba(72, 232, 212, 0.04);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -901,6 +891,8 @@ footer p {
   .step { border-left: none; border-bottom: 3px solid var(--navy); padding: 2rem 0; }
   .step:last-child { border-bottom: none; }
   .services, .process, .why, .for-who, .about { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .cta { padding: 5rem 1.5rem; }
+  .sonar-cta-section { padding: 5rem 1.5rem; }
   footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+  .sonar-depth-markers { display: none; }
+  .sonar-readout { display: none; }
 }
