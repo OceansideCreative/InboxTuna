@@ -17,7 +17,7 @@ const isPreview = process.env.VERCEL_ENV !== "production";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.inboxtuna.com"),
   title: {
-    default: "Inbox Tuna — We keep your business in touch.",
+    default: "Inbox Tuna — Email & text marketing, managed for you.",
     template: "%s | Inbox Tuna",
   },
   description:
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Inbox Tuna",
-    title: "We keep your business in touch.",
-    description: "Emails. Texts. Newsletters. Follow-up. Handled.",
+    title: "Help people choose you. And come back.",
+    description: "Email, text campaigns, and automated follow-up, managed by Nick and Bridgette.",
     images: [
       {
         url: "/social-card.png",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Inbox Tuna — We keep your business in touch.",
+    title: "Inbox Tuna — Email & text marketing, managed for you.",
     images: ["/social-card.png"],
   },
 };

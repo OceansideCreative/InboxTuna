@@ -1,14 +1,14 @@
 # Inbox Tuna redesign
 
-The first redesign is live. The second copy pass is prepared on `codex/communication-offer-refinement` for review; it is not approved for production yet.
+The first redesign is live. The substantive rebuild is prepared on `codex/inbox-tuna-business-value` for review; it is not approved for production yet. See `docs/REVIEW.md` for its reasoning and remaining inputs. This replaces the earlier copy-only preview on `codex/communication-offer-refinement`.
 
 ## What is included
 
 - A complete responsive homepage explaining managed email, text, newsletters, and follow-up.
-- A custom wordmark, tuna mark, sail illustration, social preview graphic, and locally hosted type.
+- A custom wordmark, tuna mark, interactive message examples, social preview graphic, and locally hosted type.
 - An explicit handoff: the client's team handles customer replies, quotes, bookings, and service.
-- Three anonymous work examples. They describe actual kinds of work and avoid unsupported results or public client endorsements.
-- A hypothetical annual opportunity calculator, including contribution margin and optional service/setup/software costs. It does not forecast returns or compound the same audience every month.
+- Two anonymous work examples focused on advisory emails and clinic communication. They describe actual work and avoid unsupported results or public client endorsements.
+- A hypothetical annual opportunity calculator showing additional completed purchases and revenue before costs. It does not forecast returns, compare service fees, or compound the same audience every month.
 - A 20-minute conversation to identify an initial priority, discuss the handoff, and assess fit.
 - Privacy page, metadata, mobile navigation, keyboard focus, and reduced-motion support.
 
@@ -20,14 +20,14 @@ The first redesign is live. The second copy pass is prepared on `codex/communica
 4. **Photo.** A genuine photo of Nick and Bridgette would add warmth. The current type-led team graphic is intentionally complete without a stock or generated portrait.
 5. **Commercial scope.** Finalize the initial setup approach, approval process, and contract terms before selling. The public page says a fixed monthly fee is scoped after the conversation. The calculator has no preset service fee. The internal preference for $1,000+ per client is not a public package or ceiling; larger engagements can be priced higher when the scope and business case justify it.
 
-## Second-pass copy decisions
+## Current design and copy decisions
 
-- Preserve the visual design and “We keep your business in touch” headline.
+- Preserve the color palette; rebuild the sales narrative, headline, structure, and visual hierarchy.
 - Explain value across new inquiries, current customers, and repeat purchases. No promised revenue or invented results.
 - Address owners already doing the work as well as those who have not set it up.
 - Describe a scoped first month and ongoing campaigns, checks, and relevant adjustments. Avoid implying that every automation needs constant changes.
-- Replace chore-focused CTAs with a concrete conversation about the next month and what we could take over. Omit “free.”
-- Include the named customer-communication tools as text, without partnership or certification claims. Smartlead is omitted from this section to keep the focus on this offer; the existing related cold-outreach work example remains identified as a separate scope.
+- Invite a concrete conversation about the visitor’s next business priority and what we could take over. Omit “free.”
+- Include the named customer-communication tools as text, without partnership or certification claims. Smartlead and the cold-outreach work example are omitted from this page to keep the focus on this offer.
 - Keep the team illustration and anonymous work examples until real photos and approved client material arrive. No empty testimonial section.
 - Keep the working email-draft inquiry flow. Direct delivery or a real scheduling link is the remaining conversion improvement once the mailbox/provider is ready.
 
@@ -54,11 +54,11 @@ The current route validates input and rejects unconfigured delivery with HTTP 50
 ## Content edits
 
 - Homepage and FAQ: `app/page.tsx`
-- Case descriptions and contact address: `lib/site.ts`
+- Current case descriptions: `app/page.tsx`; contact address: `lib/site.ts`
 - Styling: `app/globals.css`
-- Icons and sail illustration: `components/brand.tsx`
+- Icons and brand assets: `components/brand.tsx`; interactive examples: `components/message-preview.tsx`
 - Inquiry form: `components/review-form.tsx`
-- Calculator: `components/opportunity.tsx`
+- Calculator: `components/opportunity.tsx` and `components/opportunity.module.css`
 - SEO/social metadata: `app/layout.tsx`
 - Privacy: `app/privacy/page.tsx`
 

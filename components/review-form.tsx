@@ -51,7 +51,7 @@ export function ReviewForm({ deliveryEnabled }: { deliveryEnabled: boolean }) {
       <span className="form-topline">
         <span className="status-dot" /> A GOOD PLACE TO START
       </span>
-      <h3>Tell us about your business.</h3>
+      <h3>Tell us what you have in mind.</h3>
       <form onSubmit={submit} method="post" action="/api/review">
         <div className="form-grid">
           <label>
@@ -87,14 +87,14 @@ export function ReviewForm({ deliveryEnabled }: { deliveryEnabled: boolean }) {
           />
         </label>
         <label>
-          What would you like help with?
+          What would you like to improve or hand over?
           <textarea
             name="message"
             required
             minLength={10}
             maxLength={2000}
             rows={4}
-            placeholder="What do you send today? What would you like to improve or hand over? A few sentences is plenty."
+            placeholder="A newsletter you want handled? More consistent messages after an inquiry? Tell us a little."
           />
         </label>
         <div className="honeypot" aria-hidden="true">
