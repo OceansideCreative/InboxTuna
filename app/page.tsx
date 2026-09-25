@@ -112,7 +112,7 @@ export default function Home() {
           <div className="about-copy"><p className="eyebrow">THE PEOPLE BEHIND INBOX TUNA</p><h2>You’ll work with<br />Nick & Bridgette.</h2><p>We’re a two-person business in Hollywood, Florida. Nick handles the writing, marketing, and technical setup. Bridgette keeps the details and communication organized.</p><p>We like learning how a business works, figuring out what would help, and getting it done. You’ll speak directly with the people handling your work.</p><a className="text-link" href="#review">Come meet us <Arrow diagonal /></a></div>
         </section>
 
-        <section className="faq-section section"><div className="container faq-layout"><div><p className="eyebrow">BEFORE WE TALK</p><h2>A few things<br />you might<br /><em>be wondering.</em></h2></div><div className="faq-list">{faqs.map(([question,answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>
+        <section className="faq-section section"><div className="container faq-layout"><div><p className="eyebrow">BEFORE WE TALK</p><h2>A few things <br />you might <br /><em>be wondering.</em></h2></div><div className="faq-list">{faqs.map(([question,answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></div></section>
 
         <section id="review" className="section review-section">
           <div className="container review-layout">

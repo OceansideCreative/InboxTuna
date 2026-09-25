@@ -34,6 +34,15 @@ The calculator explores hypothetical gross revenue from additional purchases ove
 3. An approved clinic or PV campaign screenshot, with the original request and what Nick delivered. Verify details before adding PV as another case.
 4. A verified receiving mailbox and configured direct inquiry delivery, or a real booking link. Until then, describe the existing email-draft flow accurately; preparing a draft is not sending an inquiry.
 
+## Validation completed
+
+- ESLint, TypeScript, and the production build passed.
+- The Vercel preview reached READY. The new opening, work examples, calculator, and contact section were visually inspected on desktop.
+- All three illustrative message states rendered correctly. Work navigation, the calculator contact link, and the pricing FAQ worked.
+- Calculator checks: 1,000 people × 2% × $250 displayed $5,000 and 20 additional purchases; a blank input suppressed the result; 101% produced an accessible error and no result. Defaults were restored afterward.
+- The contact form prepared a correct email draft with synthetic test data and explicitly stated that nothing had been sent. No message was sent. Direct delivery remains unconfigured.
+- Responsive styles were reviewed, and missing word spaces in the mobile FAQ heading were corrected. A rendered mobile viewport was not available in this browser session; mobile visual verification remains a publication check.
+
 ## Before publication
 
-Review the rendered page and verify navigation, interactive examples, calculator arithmetic and labels, and contact behavior. Confirm mobile layout where available. Record validation only after it has actually been completed, then obtain Nick's approval before publishing to production.
+Confirm the mobile layout, finish the receiving-mailbox or booking setup, and obtain Nick's approval before publishing to production.
