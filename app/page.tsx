@@ -20,15 +20,15 @@ const faqs = [
   ],
   [
     "How much of my time will this take?",
-    "We need your input on the business, your customers, and what you want to say. We’ll agree on one point of contact and a straightforward approval process. The goal is to get this off your ongoing to-do list; we won’t invent a number of hours you’ll save.",
+    "More at the start, while we learn your business and agree on the plan. After that, we need business updates and approvals through one point of contact. We bring you drafts and recommendations, so you’re reviewing the work rather than starting it from scratch.",
   ],
   [
     "How does pricing work?",
     "Ongoing management has a fixed monthly fee, based on the tools, audiences, and work we agree to handle. Any initial setup is spelled out separately. After the first conversation, you’ll get a clear scope and price before making a commitment.",
   ],
   [
-    "Do you guarantee more sales?",
-    "No. Better communication can create opportunities, but your offer, demand, customer experience, and team’s follow-through matter too. We commit to the agreed work, careful execution, and reporting what we can actually measure.",
+    "How will we know whether it’s helping?",
+    "We agree on the actions that matter to your business, such as inquiries, appointments, or purchases, and what your tools can track. We review those alongside campaign activity and your team’s feedback. We don’t guarantee revenue or count every sale after an email as a sale caused by that email.",
   ],
   [
     "What if I only need a few things set up?",
@@ -57,20 +57,20 @@ export default function Home() {
               <span className="underline-accent">in touch.</span>
             </h1>
             <p className="hero-description">
-              Emails, texts, newsletters, and the follow-up in between. We plan,
-              write, and manage them so staying in touch doesn’t keep landing
-              back on your list.
+              We manage your emails, texts, and automated follow-up to help
+              turn inquiries into customers and give customers reasons to come
+              back. You get a plan, the work done, and people responsible for it.
             </p>
             <div className="hero-actions">
               <a className="button" href="#review">
-                Let’s look at your follow-up <Arrow diagonal />
+                Let’s talk about your business <Arrow diagonal />
               </a>
               <a className="text-link" href="#services">
                 See what we handle <span aria-hidden="true">↓</span>
               </a>
             </div>
             <p className="small-note">
-              Start with a free, 20-minute conversation.
+              In 20 minutes, let’s see what we could take over for you.
             </p>
           </div>
           <SailArt />
@@ -94,36 +94,36 @@ export default function Home() {
         </div>
         <section className="section container problem">
           <div>
-            <p className="eyebrow">SOUND FAMILIAR?</p>
+            <p className="eyebrow">FROM THE FIRST INQUIRY TO THE NEXT VISIT</p>
             <h2>
-              “We really should
+              Give people
               <br />
-              be keeping up
+              a reason to
               <br />
-              with this.”
+              choose you again.
             </h2>
             <p className="section-intro">
-              Past customers. People who asked for a quote. Subscribers who
-              haven’t heard from you in months. You already have people to talk
-              to.
+              Some people are deciding whether to buy. Others already know
+              your business and could use it again. What they hear from you
+              should reflect where they are.
             </p>
           </div>
           <div className="problem-list">
             {[
               [
                 "01",
-                "The newsletter keeps getting put off.",
-                "You have something useful to say. Finding the time to write it, build it, and send it is another story.",
+                "Help a new inquiry take the next step.",
+                "Someone asks about your business today. A useful introduction, answers to common questions, and timely follow-up can help them decide what to do next.",
               ],
               [
                 "02",
-                "Follow-up depends on someone remembering.",
-                "An inquiry goes quiet. A customer hasn’t been back. There’s no clear plan for what happens next.",
+                "Keep customers informed and interested.",
+                "Share useful advice, introduce a service, or explain what’s coming up. Give people something relevant to hear from a business they already know.",
               ],
               [
                 "03",
-                "Your software could be doing more.",
-                "You’re paying for tools with useful features, but setting them up keeps sliding down the list.",
+                "Make the invitation to come back.",
+                "A service is due. A season is changing. A customer has a reason to buy again. Plan those messages before the moment passes.",
               ],
             ].map(([n, title, body]) => (
               <div className="problem-row" key={n}>
@@ -142,14 +142,15 @@ export default function Home() {
               <div>
                 <p className="eyebrow">HERE’S WHERE WE COME IN</p>
                 <h2>
-                  The messages. The setup.
+                  We plan it, write it,
                   <br />
-                  <em>The keeping it going.</em>
+                  <em>and keep it going.</em>
                 </h2>
               </div>
               <p>
-                We take responsibility for the communication you want
-                happening—using the tools you have, wherever practical.
+                Already sending and ready to hand it over? Or still meaning to
+                get it started? We take responsibility for the work, using your
+                existing tools wherever practical.
               </p>
             </div>
             <div className="service-rows">
@@ -157,22 +158,22 @@ export default function Home() {
                 {
                   type: "mail" as const,
                   n: "01",
-                  title: "Emails worth opening.",
+                  title: "Email & newsletters.",
                   body: "A newsletter. A useful update. A reason to come back. We turn what’s happening in your business into emails for the people who should hear about it.",
                   list: "Planning · Writing · Building · Sending",
                 },
                 {
                   type: "text" as const,
                   n: "02",
-                  title: "Texts with a reason.",
+                  title: "Text campaigns.",
                   body: "Some messages are short, timely, and better sent by text. We help you use that channel thoughtfully, with an appropriate audience and a clear next step.",
                   list: "Relevant messages · Audience checks · Timing",
                 },
                 {
                   type: "flow" as const,
                   n: "03",
-                  title: "Follow-up that follows through.",
-                  body: "A welcome after an inquiry. A check-in after a purchase. A review request or an invitation back. We set up the useful follow-up and keep an eye on how it works.",
+                  title: "Automated follow-up.",
+                  body: "Welcome new inquiries, follow up on an estimate, or check in after a purchase. We set up the messages, timing, and stopping points, then check that they still fit your business.",
                   list: "Automations · Reply routing · Ongoing checks",
                 },
               ].map((s) => (
@@ -199,10 +200,24 @@ export default function Home() {
                 ↗
               </span>
               <p>
-                <strong>One agreed plan. Someone responsible for it.</strong> We
-                define the tools, priorities, and cadence together. If the work
-                grows, we agree on the change first.
+                <strong>A clear monthly scope.</strong> We agree on the
+                audiences, campaigns, automations, and tools we’ll manage. You
+                know what’s included and who’s taking care of it.
               </p>
+            </div>
+            <div className="tools-note">
+              <h3>We start with the tools you already use.</h3>
+              <p>
+                Our experience includes email platforms and the communication
+                features inside business software. We’ll look at what your
+                setup supports before recommending anything new.
+              </p>
+              <ul className="tool-names" aria-label="Tools we’ve worked with">
+                {["Mailchimp", "Constant Contact", "Klaviyo", "MailerLite", "Zenoti", "Nextech"].map((tool) => (
+                  <li key={tool}>{tool}</li>
+                ))}
+              </ul>
+              <p className="tools-footnote">Use something else? Tell us what you have.</p>
             </div>
           </div>
         </section>
@@ -211,14 +226,15 @@ export default function Home() {
             <div>
               <p className="eyebrow">A SIMPLE WAY TO START</p>
               <h2>
-                Off your list.
+                A clear first month.
                 <br />
-                Into a routine.
+                A plan after that.
               </h2>
             </div>
             <p>
-              You keep your accounts and your customer relationships. We make
-              the communication easier to keep up with.
+              You keep your accounts and customer relationships. We handle the
+              preparation and execution, with an approval process that fits
+              your business.
             </p>
           </div>
           <div className="process-grid">
@@ -230,8 +246,8 @@ export default function Home() {
               ],
               [
                 "02",
-                "Pick the first priorities.",
-                "We agree on the useful work, the scope, and what needs your approval. Then we put a plan around it.",
+                "Agree on the first month.",
+                "We choose the first campaigns or flows, define the scope, and agree on approvals and what success would look like.",
               ],
               [
                 "03",
@@ -240,8 +256,8 @@ export default function Home() {
               ],
               [
                 "04",
-                "Keep paying attention.",
-                "We check the flows, plan the next messages, and review responses and trackable actions with you.",
+                "Manage it month to month.",
+                "We plan and send the next campaigns, check existing flows, and adjust where needed. Together, we review the responses and actions your tools can track.",
               ],
             ].map(([n, t, b]) => (
               <div className="process-step" key={n}>
@@ -276,12 +292,12 @@ export default function Home() {
               <h2>
                 Different businesses.
                 <br />
-                Real things to take care of.
+                Work you can recognize.
               </h2>
             </div>
             <p>
-              From writing the next email to helping the software do its job,
-              this is the kind of work Nick already handles.
+              Client newsletters, clear product introductions, and messages
+              that connect to a booking. A few examples of Nick’s work.
             </p>
           </div>
           <div className="work-grid">
@@ -410,8 +426,9 @@ export default function Home() {
               Easy to talk to.
             </h2>
             <p>
-              We like getting to know a business, figuring out what would help,
-              and getting it done.
+              You’ve built a business people want to buy from. We help you
+              keep talking to those people, without having to write every
+              email or figure out every setting yourself.
             </p>
             <p>
               Nick brings the writing, marketing, and technical know-how.
@@ -419,8 +436,8 @@ export default function Home() {
               people. Together, we keep the details moving.
             </p>
             <p>
-              You’ll know who’s handling the work. And you’ll be able to have a
-              normal conversation with us about it.
+              We get to know what you sell, how your customers buy, and how
+              you like to work. You’ll deal directly with us.
             </p>
             <a className="text-link" href="#review">
               Tell us about your business <Arrow diagonal />
@@ -455,23 +472,24 @@ export default function Home() {
         <section id="review" className="section review-section">
           <div className="container review-layout">
             <div className="review-copy">
-              <p className="eyebrow">LET’S TAKE A LOOK</p>
+              <p className="eyebrow">LET’S TALK ABOUT YOUR BUSINESS</p>
               <h2>
-                What’s been
+                Let’s see what
                 <br />
-                sitting on
+                your next month
                 <br />
-                <em>your list?</em>
+                <em>could look like.</em>
               </h2>
               <p>
-                Tell us a little about your business. We’ll start with a free,
-                20-minute conversation about how you keep in touch and where
-                things fall through.
+                Tell us how you communicate with customers and inquiries
+                today, and what you’d like to improve or hand over. In a
+                20-minute conversation, we’ll talk through where we could
+                help and what we’d start with.
               </p>
               <ul className="review-points">
-                <li>No account access needed to start.</li>
-                <li>One or two useful priorities to consider.</li>
-                <li>An honest answer about whether we can help.</li>
+                <li>A first priority tied to your business goals.</li>
+                <li>A clear picture of what we could take over.</li>
+                <li>If there’s a fit, a scoped proposal afterward.</li>
               </ul>
               <p className="review-signoff">
                 Talk soon,

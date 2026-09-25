@@ -18,7 +18,7 @@ export function Opportunity() {
   const [percent, setPercent] = useState("1");
   const [sale, setSale] = useState("300");
   const [margin, setMargin] = useState("50");
-  const [fee, setFee] = useState("1500");
+  const [fee, setFee] = useState("");
   const [setup, setSetup] = useState("0");
   const [software, setSoftware] = useState("0");
   const c = value(contacts, 10000000),
@@ -42,16 +42,17 @@ export function Opportunity() {
       <div className="container">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">A LITTLE MATH. NO PROMISES.</p>
+            <p className="eyebrow">PUT YOUR NUMBERS TO IT</p>
             <h2>
               What could another
               <br />
-              customer visit be worth?
+              purchase be worth?
             </h2>
           </div>
           <p>
-            The people already in your database are a place to start. Whether
-            the work makes financial sense depends on your numbers.
+            A first purchase or a return visit has a different value in every
+            business. Use your own numbers to explore one possible source of
+            value from better communication.
           </p>
         </div>
         <details className="calculator">
@@ -167,11 +168,12 @@ export function Opportunity() {
               </summary>
               <div className="calculator-inputs cost-inputs">
                 <label>
-                  Monthly service fee ($)
+                  Proposed monthly service fee ($)
                   <input
                     type="number"
                     min="0"
                     max="1000000"
+                    placeholder="Enter a fee to compare"
                     value={fee}
                     onChange={(e) => setFee(e.target.value)}
                   />
@@ -204,16 +206,16 @@ export function Opportunity() {
                 </strong>
               </p>
               <p className="calc-help">
-                The $1,500 default is an illustration, not a quote. This balance
-                still excludes fixed costs and tax. A negative number means this
+                Enter a proposed fee to compare costs; this calculator is not
+                a quote. The balance excludes fixed costs and tax. A negative number means this
                 scenario doesn’t cover the costs entered.
               </p>
             </details>
             <p className="calculator-disclaimer">
               A one-time return from past customers is not automatically
               repeatable. This model does not apply the same percentage every
-              month, predict an achievable conversion rate, or account for
-              purchases that would have happened without the messages. Real
+              month or predict an achievable conversion rate. Your extra
+              purchases must exclude sales that would have happened anyway. Real
               measurement needs a baseline and, where practical, a comparison
               group.
             </p>

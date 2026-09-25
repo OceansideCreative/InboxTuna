@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Inbox Tuna",
   },
   description:
-    "Emails, texts, newsletters, and follow-up, managed by Nick and Bridgette. We help your business keep in touch with customers and the people who’ve asked about you.",
+    "Email, text campaigns, and automated follow-up, managed by Nick and Bridgette. Help new inquiries take the next step and give customers reasons to return.",
   alternates: { canonical: "/" },
   robots: isPreview
     ? { index: false, follow: false }

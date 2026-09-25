@@ -1,6 +1,6 @@
 # Inbox Tuna redesign
 
-This redesign is prepared on `codex/communications-redesign`. Keep production on its existing deployment until the preview and contact details have been reviewed.
+The first redesign is live. The second copy pass is prepared on `codex/communication-offer-refinement` for review; it is not approved for production yet.
 
 ## What is included
 
@@ -9,7 +9,7 @@ This redesign is prepared on `codex/communications-redesign`. Keep production on
 - An explicit handoff: the client's team handles customer replies, quotes, bookings, and service.
 - Three anonymous work examples. They describe actual kinds of work and avoid unsupported results or public client endorsements.
 - A hypothetical annual opportunity calculator, including contribution margin and optional service/setup/software costs. It does not forecast returns or compound the same audience every month.
-- A bounded complimentary review: a 20-minute conversation to assess fit and identify priorities.
+- A 20-minute conversation to identify an initial priority, discuss the handoff, and assess fit.
 - Privacy page, metadata, mobile navigation, keyboard focus, and reduced-motion support.
 
 ## Decisions and assets still needed
@@ -18,7 +18,18 @@ This redesign is prepared on `codex/communications-redesign`. Keep production on
 2. **Contact delivery.** The default form prepares an email draft. Nothing is sent until the visitor sends it in their email app. A copyable message and direct address are provided if an email app is unavailable. For direct form delivery, complete the configuration below. A scheduling link can be added once one exists; none has been invented.
 3. **Client permissions.** Get approval for client names, logos, screenshots, and any quotes before adding them. A willingness to provide a reference is not the same as permission to publish it. No fabricated results or testimonials are included.
 4. **Photo.** A genuine photo of Nick and Bridgette would add warmth. The current type-led team graphic is intentionally complete without a stock or generated portrait.
-5. **Commercial scope.** Finalize the monthly minimum, the initial setup approach, the approval process, and contract terms. The public page says a fixed monthly fee is scoped after the conversation. The calculator's $1,500 entry is clearly an illustrative input, not a published service quote.
+5. **Commercial scope.** Finalize the initial setup approach, approval process, and contract terms before selling. The public page says a fixed monthly fee is scoped after the conversation. The calculator has no preset service fee. The internal preference for $1,000+ per client is not a public package or ceiling; larger engagements can be priced higher when the scope and business case justify it.
+
+## Second-pass copy decisions
+
+- Preserve the visual design and “We keep your business in touch” headline.
+- Explain value across new inquiries, current customers, and repeat purchases. No promised revenue or invented results.
+- Address owners already doing the work as well as those who have not set it up.
+- Describe a scoped first month and ongoing campaigns, checks, and relevant adjustments. Avoid implying that every automation needs constant changes.
+- Replace chore-focused CTAs with a concrete conversation about the next month and what we could take over. Omit “free.”
+- Include the named customer-communication tools as text, without partnership or certification claims. Smartlead is omitted from this section to keep the focus on this offer; the existing related cold-outreach work example remains identified as a separate scope.
+- Keep the team illustration and anonymous work examples until real photos and approved client material arrive. No empty testimonial section.
+- Keep the working email-draft inquiry flow. Direct delivery or a real scheduling link is the remaining conversion improvement once the mailbox/provider is ready.
 
 ## Direct inquiry delivery (optional)
 

@@ -15,7 +15,7 @@ export function ReviewForm({ deliveryEnabled }: { deliveryEnabled: boolean }) {
     const form = new FormData(event.currentTarget);
     const data = Object.fromEntries(form.entries()) as Record<string, string>;
     if (data.company_fax) return;
-    const message = `Hi Nick and Bridgette,\n\nI'd like to talk about our customer communication.\n\nName: ${data.name}\nEmail: ${data.email}\nBusiness / website: ${data.business}\n\nWhat's on my list:\n${data.message}\n`;
+    const message = `Hi Nick and Bridgette,\n\nI'd like to talk about our customer communication.\n\nName: ${data.name}\nEmail: ${data.email}\nBusiness / website: ${data.business}\n\nWhat we'd like help with:\n${data.message}\n`;
     setDraft(message);
     setCopied(false);
     if (!deliveryEnabled) {
@@ -51,7 +51,7 @@ export function ReviewForm({ deliveryEnabled }: { deliveryEnabled: boolean }) {
       <span className="form-topline">
         <span className="status-dot" /> A GOOD PLACE TO START
       </span>
-      <h3>Tell us a little.</h3>
+      <h3>Tell us about your business.</h3>
       <form onSubmit={submit} method="post" action="/api/review">
         <div className="form-grid">
           <label>
@@ -87,14 +87,14 @@ export function ReviewForm({ deliveryEnabled }: { deliveryEnabled: boolean }) {
           />
         </label>
         <label>
-          What would you like us to take off your list?
+          What would you like help with?
           <textarea
             name="message"
             required
             minLength={10}
             maxLength={2000}
             rows={4}
-            placeholder="The emails you mean to send, follow-up that’s getting missed, a tool you could use more…"
+            placeholder="What do you send today? What would you like to improve or hand over? A few sentences is plenty."
           />
         </label>
         <div className="honeypot" aria-hidden="true">
