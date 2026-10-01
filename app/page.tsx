@@ -376,7 +376,7 @@ export default function Home() {
             <Brand />
           </Link>
           <p>We keep your business in touch.</p>
-          <a className="text-link" href="#hero-title">
+          <a className="text-link" href="#main-content">
             Back to top ↑
           </a>
         </div>
