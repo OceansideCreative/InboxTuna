@@ -22,25 +22,18 @@ export function ContactCard() {
   }
   return (
     <div className="contact-card">
-      <span className="card-label">
-        <span className="status-dot" /> SAY HELLO
-      </span>
-      <h3>
-        Tell us a little
-        <br />
-        about your business.
-      </h3>
+      <h3>Arrange a 20-minute call.</h3>
       <p>
-        Email us with what you have in mind. We’ll reply to arrange a time to
-        talk.
+        Email your website and what you’d like help with. We’ll reply to find a
+        time.
       </p>
       <a className="button" href={mailto}>
-        Email Nick & Bridgette <Arrow diagonal />
+        Email to arrange a call <Arrow />
       </a>
       <p className="email-app-note">
         Opens a draft in your email app.{" "}
         <a href={gmail} target="_blank" rel="noopener noreferrer">
-          Or open in Gmail ↗
+          Open in Gmail
         </a>
       </p>
       <div className="contact-address">

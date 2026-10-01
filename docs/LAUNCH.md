@@ -2,6 +2,8 @@
 
 Nick authorized rebuilding and publishing the existing Vercel site on October 1. This revision starts from the original production commit `060f447`, not either unpublished September preview.
 
+Later on October 1, Nick authorized a focused editorial/design refinement of `e70ae268`. See `docs/REFINEMENT.md` for research, specific changes, and validation scope. This pass removes repeated labels and decoration, replaces vague benefit headings with concrete services, makes the team introduction secondary, and clarifies the email-to-arrange-a-call path.
+
 ## What changed
 
 - The headline explains the service directly: setup and management of email and text marketing for leads and customers.
@@ -21,7 +23,7 @@ The earlier inquiry form and `/api/review` route remain in source for a future d
 
 ## Remaining assets and decisions
 
-1. A real photo of Nick and Bridgette.
+1. An optional real team photo; the service takes priority over team branding.
 2. Approved client quotes, names/logos, and campaign screenshots. Current work descriptions remain anonymous and credit WVNDR Media where appropriate.
 3. A verified Inbox Tuna mailbox if Nick wants to replace the existing Gmail address.
 4. A real scheduling link if Nick wants visitors to choose a time directly. No calendar or booking availability has been invented.

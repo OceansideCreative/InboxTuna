@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-html-link-for-pages -- These section links intentionally use native fragment navigation. Full-page links still use Next Link. */
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Arrow, Brand } from "./brand";
@@ -37,22 +38,22 @@ export function Header() {
           className={open ? "main-nav is-open" : "main-nav"}
           aria-label="Main navigation"
         >
-          <Link href="/#services" onClick={() => setOpen(false)}>
-            How we help
-          </Link>
-          <Link href="/#work" onClick={() => setOpen(false)}>
+          <a href="/#services" onClick={() => setOpen(false)}>
+            Services
+          </a>
+          <a href="/#work" onClick={() => setOpen(false)}>
             Our work
-          </Link>
-          <Link href="/#about" onClick={() => setOpen(false)}>
-            Meet us
-          </Link>
-          <Link
+          </a>
+          <a href="/#how-it-works" onClick={() => setOpen(false)}>
+            How it works
+          </a>
+          <a
             className="button button-small"
             href="/#contact"
             onClick={() => setOpen(false)}
           >
-            Let’s talk <Arrow diagonal />
-          </Link>
+            Arrange a call <Arrow />
+          </a>
         </nav>
       </div>
     </header>

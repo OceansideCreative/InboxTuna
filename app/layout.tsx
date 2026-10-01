@@ -17,7 +17,7 @@ const dmSans = localFont({
 const isPreview = process.env.VERCEL_ENV !== "production";
 const title = "Inbox Tuna — Email & Text Marketing, Managed for You";
 const description =
-  "We set up and manage email and text marketing for your leads and customers. Newsletters, promotions, and automated follow-up by Nick and Bridgette.";
+  "We set up and manage email and text marketing for your leads and customers. Newsletters, promotions, and automated messages, planned and sent for you.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.inboxtuna.com"),

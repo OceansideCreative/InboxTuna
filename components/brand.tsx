@@ -163,29 +163,18 @@ export function SailArt() {
             strokeLinecap="round"
           />
         </g>
-        <path
-          d="m487 84 7 17 18 7-18 7-7 17-6-17-18-7 18-7 6-17Z"
-          fill="#ff7a69"
-        />
-        <path d="M75 226h38m-19-19v38" stroke="#182642" strokeWidth="2" />
       </svg>
       <div className="message-sticker">
         <span className="sticker-icon">
           <ChannelIcon type="mail" />
         </span>
         <div>
-          <span className="micro">FROM YOUR BUSINESS</span>
           <strong>
             Good to hear
             <br />
             from you.
           </strong>
         </div>
-        <span className="sticker-dot" />
-      </div>
-      <div className="art-caption">
-        <span>EMAIL. TEXT. FOLLOW-UP.</span>
-        <span>NICK & BRIDGETTE ↗</span>
       </div>
     </div>
   );

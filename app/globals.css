@@ -97,12 +97,9 @@ svg {
   margin-inline: auto;
 }
 .section {
-  padding-block: 96px;
+  padding-block: 88px;
 }
-.eyebrow,
-.micro,
-.card-label,
-.step-number {
+.eyebrow {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -112,15 +109,7 @@ svg {
 .eyebrow {
   margin-bottom: 21px;
 }
-.status-dot {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--teal);
-  margin-right: 7px;
-  vertical-align: middle;
-}
+
 .skip-link {
   position: absolute;
   left: 16px;
@@ -252,6 +241,7 @@ svg {
   gap: 28px;
   align-items: center;
   padding-block: 69px 76px;
+  border-bottom: 1px solid var(--line);
 }
 .hero-copy {
   position: relative;
@@ -306,10 +296,7 @@ svg {
   transform: rotate(-7deg);
   box-shadow: 5px 6px 0 var(--ink);
 }
-.message-sticker .micro {
-  font-size: 8px;
-  letter-spacing: 0.12em;
-}
+
 .message-sticker strong {
   display: block;
   font-family: var(--font-display);
@@ -317,7 +304,7 @@ svg {
   font-size: 27px;
   line-height: 1.15;
   letter-spacing: -1px;
-  margin-top: 7px;
+  margin-top: 0;
 }
 .sticker-icon {
   background: var(--lime);
@@ -331,47 +318,7 @@ svg {
   width: 30px;
   height: 30px;
 }
-.sticker-dot {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background: var(--coral);
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-}
-.art-caption {
-  position: absolute;
-  bottom: 0;
-  left: 13%;
-  right: 2%;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 9px;
-  font-weight: 650;
-  letter-spacing: 0.11em;
-  transform: rotate(-3deg);
-}
-.service-strip {
-  background: var(--lime);
-  border-block: 1px solid var(--ink);
-}
-.strip-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-block: 21px;
-  font-size: 11px;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-}
-.strip-inner > [aria-hidden] {
-  font-size: 23px;
-  font-weight: 400;
-  line-height: 1;
-}
+
 .section-heading {
   display: grid;
   grid-template-columns: 1.3fr 0.8fr;
@@ -387,144 +334,55 @@ svg {
   max-width: 370px;
   padding-bottom: 3px;
 }
-.opportunity-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-.opportunity-card {
-  min-width: 0;
-  padding: 0 30px;
-  border-left: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-}
-.opportunity-card:first-child {
-  padding-left: 0;
-  border-left: 0;
-}
-.opportunity-card:last-child {
-  padding-right: 0;
-}
-.opportunity-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-.opportunity-top > svg {
-  width: 54px;
-  height: 54px;
-  color: var(--blue);
-}
-.opportunity-top > span {
-  font-family: var(--font-display);
-  font-size: 12px;
-}
-.opportunity-card .card-label {
-  font-size: 10px;
-  margin-bottom: 12px;
-}
-.opportunity-card h3 {
-  font-size: 28px;
-  max-width: 310px;
-}
-.opportunity-description {
-  font-size: 15px;
-  margin-top: 19px;
-  margin-bottom: 25px;
-}
-.opportunity-example {
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-  margin-top: auto;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--ink);
-}
-.next-campaign {
+.service-list {
   border-top: 1px solid var(--ink);
-  margin-top: 43px;
-  padding-top: 23px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
 }
-.next-campaign p {
-  font-size: 14px;
-  color: var(--ink);
+.service-row {
+  display: grid;
+  grid-template-columns: 0.85fr 1.2fr;
+  gap: 100px;
+  padding-block: 29px;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
 }
-.next-campaign a {
-  white-space: nowrap;
+.service-row h3 {
+  font-size: 28px;
+  max-width: 320px;
+}
+.service-row p {
+  font-size: 16px;
+  max-width: 590px;
 }
 .work-section {
   background: var(--ink);
   color: var(--paper);
 }
-.work-section .eyebrow {
-  color: var(--teal);
-}
-.work-section .section-heading > p {
-  color: #d4d7da;
-}
-.work-grid {
+.work-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 100px;
+  align-items: start;
 }
-.work-card {
-  padding: 34px;
-  background: var(--paper);
-  color: var(--ink);
-  border-top: 6px solid var(--teal);
-  display: flex;
-  flex-direction: column;
+.work-example + .work-example {
+  border-top: 1px solid #f5f2e940;
+  padding-top: 33px;
+  margin-top: 33px;
 }
-.work-card-clinic {
-  border-top-color: var(--coral);
+.work-example h3 {
+  color: var(--lime);
+  font-size: 31px;
+  max-width: 530px;
+  line-height: 1.2;
 }
-.work-label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 24px;
+.work-example > p {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #e0e3e8;
+  max-width: 590px;
 }
-.work-label svg {
-  width: 31px;
-  height: 31px;
-}
-.work-card h3 {
-  font-size: clamp(27px, 2.4vw, 34px);
-  line-height: 1.15;
-  max-width: 450px;
-}
-.work-card > p:not(.work-credit) {
-  margin-top: 22px;
-  margin-bottom: 25px;
-  font-size: 15px;
-}
-.work-result {
-  border-top: 1px solid var(--line);
-  padding-top: 19px;
-  margin-top: auto;
-}
-.work-result > span {
-  font-size: 10px;
-  font-weight: 750;
-  letter-spacing: 0.09em;
-}
-.work-result p {
-  font-size: 14px;
-  margin-top: 8px;
-}
-.work-card .work-credit {
-  font-size: 11px;
-  padding-top: 23px;
+.work-example .work-credit {
+  font-size: 12px;
+  color: #bdc6d6;
 }
 .management-section .section-heading {
   grid-template-columns: 1.3fr 0.8fr;
@@ -532,43 +390,31 @@ svg {
 .management-board {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid var(--ink);
-  box-shadow: 5px 5px 0 var(--ink);
+  border-block: 1px solid var(--ink);
 }
 .management-board article {
   padding: 32px 36px;
 }
 .management-start {
-  background: var(--white);
+  background: var(--paper);
   border-right: 1px solid var(--ink);
 }
 .management-monthly {
   background: var(--teal);
 }
-.step-number {
-  display: block;
-  margin-bottom: 21px;
-  font-size: 10px;
-}
+
 .management-board h3 {
   font-size: 29px;
 }
 .management-board ul {
-  list-style: none;
-  margin: 24px 0 0;
-  padding: 0;
+  list-style: disc;
+  margin: 22px 0 0;
+  padding-left: 18px;
 }
 .management-board li {
-  position: relative;
-  padding-left: 21px;
+  padding-left: 5px;
   font-size: 15px;
   margin-top: 12px;
-}
-.management-board li::before {
-  content: "↗";
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 .management-handoff {
   font-size: 13px;
@@ -612,83 +458,22 @@ svg {
 .about-section {
   background: var(--lime);
   border-block: 1px solid var(--ink);
+  padding-block: 43px;
 }
 .about-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 95px;
-  align-items: center;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 100px;
+  align-items: start;
 }
-.people-art {
-  min-width: 0;
-  padding: 27px;
-  background: var(--ink);
-  color: var(--paper);
-  box-shadow: 8px 8px 0 var(--teal);
-  overflow: hidden;
+.about-layout h2 {
+  font-size: 30px;
+  text-wrap: initial;
 }
-.people-art-top,
-.people-art-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  line-height: 1.5;
-}
-.people-art-top {
-  padding-bottom: 28px;
-}
-.people-art-top svg {
-  width: 31px;
-  color: var(--lime);
-}
-.people-name {
-  font-family: var(--font-display);
-  font-weight: 750;
-  letter-spacing: -0.065em;
-  line-height: 1;
-  padding: 19px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-.people-name > span {
-  font-size: 0.5em;
-  font-weight: 400;
-}
-.name-nick {
-  font-size: clamp(55px, 5.6vw, 82px);
-  background: var(--coral);
+.about-layout p {
   color: var(--ink);
-  margin-right: 55px;
-  transform: rotate(-3deg);
-  position: relative;
-  z-index: 1;
-}
-.name-bridgette {
-  font-size: clamp(45px, 4.7vw, 67px);
-  background: var(--lime);
-  color: var(--ink);
-  transform: rotate(2deg);
-  margin-top: 13px;
-}
-.people-art-bottom {
-  margin-top: 32px;
-  font-size: 8px;
-}
-.about-copy h2 {
-  font-size: clamp(35px, 3.45vw, 48px);
-}
-.about-copy > p:not(.eyebrow) {
-  margin-top: 24px;
   font-size: 16px;
-  color: var(--ink);
-}
-.about-copy .text-link {
-  margin-top: 23px;
+  max-width: 640px;
 }
 .faq-layout {
   display: grid;
@@ -749,24 +534,7 @@ svg {
   margin-top: 24px;
   max-width: 435px;
 }
-.conversation-points {
-  list-style: none;
-  border-top: 1px solid #18264250;
-  padding: 20px 0 0;
-  margin: 25px 0 0;
-  max-width: 450px;
-}
-.conversation-points li {
-  position: relative;
-  padding-left: 24px;
-  font-size: 15px;
-  margin-top: 10px;
-}
-.conversation-points li::before {
-  content: "↗";
-  position: absolute;
-  left: 0;
-}
+
 .contact-copy .contact-note {
   font-size: 12px;
   margin-top: 24px;
@@ -780,7 +548,6 @@ svg {
 }
 .contact-card h3 {
   font-size: clamp(28px, 2.5vw, 35px);
-  margin-top: 23px;
   line-height: 1.15;
 }
 .contact-card > p:not(.email-app-note):not(.copy-status) {
@@ -818,7 +585,8 @@ svg {
   padding: 8px;
   border: 1px solid var(--line);
   font-size: 11px;
-  min-height: 36px;
+  min-height: 44px;
+  min-width: 44px;
 }
 .copy-email:hover {
   background: var(--lime);
@@ -909,20 +677,13 @@ svg {
     width: 37px;
     height: 37px;
   }
-  .art-caption {
-    font-size: 7px;
-  }
-  .section-heading {
+  .section-heading,
+  .service-row,
+  .work-layout,
+  .about-layout {
     gap: 60px;
   }
-  .opportunity-card {
-    padding-inline: 23px;
-  }
-  .opportunity-card h3 {
-    font-size: 25px;
-  }
   .tools-section,
-  .about-layout,
   .faq-layout,
   .contact-layout {
     gap: 55px;
@@ -950,9 +711,6 @@ svg {
   .hero h1 {
     font-size: 42px;
   }
-  .hero-description {
-    font-size: 16px;
-  }
   .hero-takeover {
     font-size: 13px;
   }
@@ -962,9 +720,6 @@ svg {
   .hero-actions .text-link {
     font-size: 12px;
   }
-  .hero .eyebrow {
-    font-size: 10px;
-  }
   .message-sticker {
     top: 58%;
     padding: 14px;
@@ -972,9 +727,6 @@ svg {
   }
   .message-sticker strong {
     font-size: 20px;
-  }
-  .message-sticker .micro {
-    font-size: 6px;
   }
   .sticker-icon {
     width: 31px;
@@ -984,49 +736,37 @@ svg {
     width: 24px;
     height: 24px;
   }
-  .art-caption {
-    display: none;
-  }
-  .strip-inner {
-    gap: 15px;
-    font-size: 9px;
-  }
   .section {
-    padding-block: 72px;
+    padding-block: 68px;
   }
   .section-heading {
     grid-template-columns: 1.2fr 1fr;
     gap: 35px;
   }
   .section-heading > p {
-    font-size: 14px;
+    font-size: 15px;
   }
-  .opportunity-card {
-    padding-inline: 18px;
+  .service-row {
+    gap: 35px;
   }
-  .opportunity-card h3 {
-    font-size: 23px;
+  .service-row h3 {
+    font-size: 25px;
   }
-  .opportunity-card .card-label {
-    font-size: 9px;
+  .service-row p {
+    font-size: 15px;
   }
-  .opportunity-description {
-    font-size: 14px;
+  .work-layout,
+  .about-layout {
+    gap: 40px;
   }
-  .work-card {
-    padding: 25px;
+  .work-example h3 {
+    font-size: 28px;
   }
-  .work-label {
-    font-size: 9px;
-  }
-  .work-card > p:not(.work-credit) {
-    font-size: 14px;
-  }
-  .work-result p {
-    font-size: 13px;
+  .work-example > p {
+    font-size: 15px;
   }
   .management-board article {
-    padding: 29px;
+    padding: 27px;
   }
   .management-board h3 {
     font-size: 26px;
@@ -1040,34 +780,14 @@ svg {
   .tools-section li {
     font-size: 15px;
   }
-  .about-layout,
-  .faq-layout,
-  .contact-layout {
+  .about-layout h2 {
+    font-size: 28px;
+  }
+  .about-layout p {
+    font-size: 15px;
+  }
+  .faq-layout {
     gap: 40px;
-  }
-  .people-art {
-    padding: 20px;
-  }
-  .people-name {
-    padding: 17px 15px;
-  }
-  .name-nick {
-    margin-right: 35px;
-  }
-  .name-bridgette {
-    font-size: 40px;
-  }
-  .people-art-top {
-    font-size: 7px;
-  }
-  .people-art-bottom {
-    font-size: 6px;
-  }
-  .about-copy h2 {
-    font-size: 34px;
-  }
-  .about-copy > p:not(.eyebrow) {
-    font-size: 14px;
   }
   .faq-list summary {
     font-size: 15px;
@@ -1076,8 +796,7 @@ svg {
     grid-template-columns: 1fr;
     gap: 37px;
   }
-  .contact-copy > p:not(.eyebrow),
-  .conversation-points {
+  .contact-copy > p:not(.eyebrow) {
     max-width: 600px;
   }
   .contact-card {
@@ -1140,15 +859,11 @@ svg {
   .hero {
     grid-template-columns: 1fr;
     gap: 17px;
-    padding-block: 43px 32px;
+    padding-block: 35px 30px;
   }
   .hero h1 {
     font-size: clamp(39px, 8.9vw, 57px);
     line-height: 1.09;
-  }
-  .hero .eyebrow {
-    font-size: 10px;
-    margin-bottom: 20px;
   }
   .hero-description {
     margin-top: 24px;
@@ -1167,11 +882,11 @@ svg {
     font-size: 12px;
   }
   .small-note {
-    font-size: 11px;
+    font-size: 12px;
     margin-top: 16px;
   }
   .sail-art {
-    max-width: 360px;
+    max-width: 330px;
     justify-self: center;
     width: 84%;
   }
@@ -1183,9 +898,6 @@ svg {
   .message-sticker strong {
     font-size: 25px;
   }
-  .message-sticker .micro {
-    font-size: 7px;
-  }
   .sticker-icon {
     width: 39px;
     height: 39px;
@@ -1194,25 +906,14 @@ svg {
     width: 28px;
     height: 28px;
   }
-  .strip-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px 16px;
-    font-size: 9px;
-    text-align: center;
-    padding-block: 18px;
-  }
-  .strip-inner > [aria-hidden] {
-    display: none;
-  }
   .section {
-    padding-block: 60px;
+    padding-block: 55px;
   }
   .section-heading,
   .management-section .section-heading {
     grid-template-columns: 1fr;
-    gap: 21px;
-    margin-bottom: 33px;
+    gap: 18px;
+    margin-bottom: 30px;
   }
   h2 {
     font-size: clamp(33px, 8.2vw, 42px);
@@ -1225,97 +926,57 @@ svg {
     max-width: 100%;
     font-size: 15px;
   }
-  .opportunity-grid {
+  .service-row {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding-block: 25px;
   }
-  .opportunity-card,
-  .opportunity-card:first-child,
-  .opportunity-card:last-child {
-    border-left: 0;
-    padding: 29px 0;
-    border-top: 1px solid var(--line);
+  .service-row h3 {
+    font-size: 26px;
+    max-width: 100%;
   }
-  .opportunity-card:first-child {
-    padding-top: 0;
-    border-top: 0;
-  }
-  .opportunity-card:last-child {
-    padding-bottom: 0;
-  }
-  .opportunity-top {
-    margin-bottom: 17px;
-  }
-  .opportunity-top > svg {
-    width: 45px;
-    height: 45px;
-  }
-  .opportunity-card .card-label {
-    font-size: 10px;
-  }
-  .opportunity-card h3 {
-    font-size: 28px;
-    max-width: 350px;
-  }
-  .opportunity-description {
+  .service-row p {
     font-size: 15px;
-    margin-top: 14px;
-    margin-bottom: 19px;
   }
-  .opportunity-example {
-    border-top: 0;
-    padding-top: 0;
+  .work-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .work-example h3 {
+    font-size: 27px;
+  }
+  .work-example > p {
+    font-size: 15px;
+  }
+  .work-example + .work-example {
+    margin-top: 27px;
+    padding-top: 27px;
+  }
+  .work-example .work-credit {
     font-size: 12px;
-  }
-  .next-campaign {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 31px;
-  }
-  .next-campaign p {
-    font-size: 15px;
-  }
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .work-card {
-    padding: 25px;
-  }
-  .work-label {
-    font-size: 10px;
-  }
-  .work-card h3 {
-    font-size: 29px;
-  }
-  .work-card > p:not(.work-credit) {
-    font-size: 15px;
-  }
-  .work-result p {
-    font-size: 14px;
   }
   .management-board {
     grid-template-columns: 1fr;
   }
   .management-board article {
-    padding: 26px;
+    padding: 26px 23px;
   }
   .management-start {
     border-right: 0;
     border-bottom: 1px solid var(--ink);
   }
   .management-board h3 {
-    font-size: 28px;
+    font-size: 27px;
   }
   .management-board li {
-    font-size: 14px;
+    font-size: 15px;
   }
   .management-handoff {
     font-size: 13px;
   }
   .tools-section {
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 25px;
     margin-top: 30px;
     padding-top: 27px;
   }
@@ -1329,32 +990,18 @@ svg {
   .tools-section li {
     font-size: 17px;
   }
+  .about-section {
+    padding-block: 32px;
+  }
   .about-layout {
     grid-template-columns: 1fr;
-    gap: 39px;
+    gap: 17px;
   }
-  .people-art {
-    max-width: 460px;
-    padding: 24px;
+  .about-layout h2 {
+    font-size: 28px;
   }
-  .people-art-top {
-    font-size: 8px;
-  }
-  .people-art-bottom {
-    font-size: 7px;
-  }
-  .name-nick {
-    font-size: 70px;
-  }
-  .name-bridgette {
-    font-size: clamp(45px, 11.5vw, 65px);
-  }
-  .about-copy h2 {
-    font-size: 35px;
-  }
-  .about-copy > p:not(.eyebrow) {
+  .about-layout p {
     font-size: 15px;
-    margin-top: 20px;
   }
   .faq-layout {
     grid-template-columns: 1fr;
@@ -1365,20 +1012,18 @@ svg {
     padding-block: 22px;
   }
   .faq-list details > p {
-    font-size: 14px;
+    font-size: 15px;
     padding-right: 10px;
   }
   .contact-copy h2 {
-    font-size: 39px;
+    font-size: 38px;
   }
   .contact-copy > p:not(.eyebrow) {
     font-size: 15px;
+    margin-top: 20px;
   }
   .contact-copy .contact-note {
     font-size: 12px;
-  }
-  .conversation-points li {
-    font-size: 14px;
   }
   .contact-card {
     padding: 25px;
@@ -1435,17 +1080,10 @@ svg {
     min-width: 145px;
   }
   .hero-actions .text-link {
-    gap: 7px;
     font-size: 11px;
   }
   .contact-card {
     padding: 20px;
-  }
-  .name-nick {
-    font-size: 58px;
-  }
-  .name-bridgette {
-    font-size: 39px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
