@@ -4,6 +4,18 @@ October 1, 2026. Baseline: production commit `e70ae268`.
 
 Nick authorized a focused audit, implementation, and publication. The priority is the service and its business value. The brand, colors, and windsurfer personality stay; the founders' relationship is not the positioning.
 
+## Follow-up: restoring personality and commercial context
+
+Nick found the first refinement too austere. The decisions in the historical audit table below are superseded where they conflict with this revision. Clear writing does not require a visually bare page.
+
+- Restored colorful service illustrations, framed client examples, the lime brand strip, and the larger Nick/Bridgette section. The team section describes the people doing the work and their responsibilities; their relationship is not part of the offer.
+- Preserved the explicit hero, agreed-scope explanation, honest email contact flow, and native section navigation.
+- Added a static revenue illustration: ten genuinely additional bookings at $300 each would be $3,000 in revenue before costs. It is labeled hypothetical, has no assumed conversion rate, is not annualized, and is not compared with service fees.
+- Added one separate [Klaviyo customer story about Urban You](https://www.klaviyo.com/customers/case-studies/urban-you), accessed October 1, 2026. The four-location medspa attributed 25% of booking-platform revenue to Klaviyo in its first month with the booking integration; the body identifies May 2023. This is a provider-published case, not independent causal evidence or Inbox Tuna work. The page states those limits alongside the number.
+- Considered [Mailchimp's ICND/Surfside story](https://mailchimp.com/case-studies/pro-partner-icnd-grow-revenue/) and [FareHarbor's Willow Creek story](https://fareharbor.com/customer-stories/how-willow-creek-built-a-stronger-business-with-fareharbor-and-mailchimp/). Neither was needed to explain this offer. No generic email ROI average, provider ROI multiplier, or unsupported SMS statistic was added.
+
+The new financial example explains a potential business benefit; it does not establish likely results. Existing client examples remain descriptions of actual work, without invented commercial outcomes. No additional client-side functionality or dependencies were introduced.
+
 ## Research and limits
 
 - [NN/g: AI Prototyping in Real Design Contexts](https://www.nngroup.com/articles/ai-prototyping/), reviewed August 19, 2026. Inspected its documented Bolt and Claude outputs and annotated layout example. Its evaluation identifies hierarchy, grouping, contrast, and emphasis problems even in polished outputs. These are generated prototypes, not conversion-tested commercial sites.

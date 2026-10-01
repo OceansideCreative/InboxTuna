@@ -163,12 +163,15 @@ export function SailArt() {
             strokeLinecap="round"
           />
         </g>
+        <circle cx="487" cy="100" r="14" fill="#ff7a69" />
+        <path d="M75 226h38m-19-19v38" stroke="#182642" strokeWidth="2" />
       </svg>
       <div className="message-sticker">
         <span className="sticker-icon">
           <ChannelIcon type="mail" />
         </span>
         <div>
+          <span className="sticker-caption">FROM YOUR BUSINESS</span>
           <strong>
             Good to hear
             <br />
