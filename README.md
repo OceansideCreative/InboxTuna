@@ -1,12 +1,14 @@
 # Inbox Tuna
 
-A Next.js website for managed customer communication: email, text, newsletters, and automated follow-up.
+A Next.js website for managed email and text marketing, newsletters, promotions, and automated follow-up.
 
 ```sh
 npm ci
 npm run dev
+npm run lint
+npm run build
 ```
 
-Run `npm run lint` and `npm run build` before deploying. See [docs/LAUNCH.md](docs/LAUNCH.md) for contact delivery configuration, remaining assets, and launch notes.
+See [docs/LAUNCH.md](docs/LAUNCH.md) for the current page, deployment, and remaining assets.
 
-The inquiry form defaults to an explicit email-draft flow. It does not silently discard requests or claim to send mail without a configured provider.
+The contact section opens a ready-to-send email draft, with a Gmail alternative. No calendar is configured and no inquiry is sent until the visitor sends their email.

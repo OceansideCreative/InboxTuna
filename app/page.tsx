@@ -1,45 +1,62 @@
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Arrow, Brand, ChannelIcon, Fish, SailArt } from "@/components/brand";
-import { Opportunity } from "@/components/opportunity";
-import { ReviewForm } from "@/components/review-form";
-import { cases } from "@/lib/site";
+import { ContactCard } from "@/components/contact-card";
+
+const opportunities = [
+  {
+    number: "01",
+    icon: "flow" as const,
+    label: "AUTOMATED FOLLOW-UP",
+    title: "Help interested people take the next step.",
+    description:
+      "Someone asks about your business. A useful email can answer their questions, explain what you offer, and make it easier to book or buy.",
+    example: "An inquiry comes in → a helpful introduction goes out.",
+  },
+  {
+    number: "02",
+    icon: "mail" as const,
+    label: "NEWSLETTERS & PROMOTIONS",
+    title: "Give customers more reasons to choose you.",
+    description:
+      "Share useful advice, introduce a service, or put a timely offer in front of people who already know your business.",
+    example: "You launch a service → the right customers hear about it.",
+  },
+  {
+    number: "03",
+    icon: "text" as const,
+    label: "EMAIL & TEXT CAMPAIGNS",
+    title: "Make coming back an easy decision.",
+    description:
+      "A relevant reminder or invitation can bring your business to mind when a customer is ready for another appointment or purchase.",
+    example: "It’s time for another visit → a reminder makes it easy to book.",
+  },
+];
 
 const faqs = [
   [
-    "What would you actually handle for us?",
-    "We agree on a plan around your business: the audiences to contact, the messages they need, and the timing. That can include newsletters, email or text campaigns, and automated follow-up. We handle planning, writing, setup, checks, and ongoing attention within that scope.",
+    "Can you take over what we already send?",
+    "Yes. We can take over an existing newsletter or campaign schedule, improve the parts that need attention, and keep the voice your customers know. You don’t have to start again to work with us.",
   ],
   [
-    "Who answers when a customer replies?",
-    "Your team. Before anything goes out, we agree on where replies go and who takes the next step. You handle quotes, appointments, sales, and customer service. We manage the messages and follow-up, including when an automated sequence should stop.",
-  ],
-  [
-    "Can you work with the software we already use?",
-    "That’s where we start. We look at what your current tools can do and what access we need. If a limitation means new software or extra technical work, we explain it and agree on the cost before proceeding.",
-  ],
-  [
-    "How much of my time will this take?",
-    "We need your input on the business, your customers, and what you want to say. We’ll agree on one point of contact and a straightforward approval process. The goal is to get this off your ongoing to-do list; we won’t invent a number of hours you’ll save.",
+    "How much input will you need from us?",
+    "We need to learn your business, get access to the agreed tools, and understand what matters to your customers. After that, you share business updates and approve messages through a process we agree together. We bring the plan and handle production.",
   ],
   [
     "How does pricing work?",
-    "Ongoing management has a fixed monthly fee, based on the tools, audiences, and work we agree to handle. Any initial setup is spelled out separately. After the first conversation, you’ll get a clear scope and price before making a commitment.",
+    "We propose a fixed monthly fee based on the campaigns, audiences, tools, and automations we’ll manage. Any initial setup is priced separately. You’ll see the scope and price before committing. If a one-time setup is all you need, we’ll recommend that.",
   ],
   [
-    "Do you guarantee more sales?",
-    "No. Better communication can create opportunities, but your offer, demand, customer experience, and team’s follow-through matter too. We commit to the agreed work, careful execution, and reporting what we can actually measure.",
+    "Who handles replies and customer service?",
+    "Your team handles personal replies, sales conversations, quotes, bookings, and customer service. We handle the agreed marketing messages and automations, including where replies go and when a follow-up sequence should stop.",
   ],
   [
-    "What if I only need a few things set up?",
-    "Then we’ll say so. Sometimes a focused project or a change in your existing software is the right answer. Ongoing management should earn its place by giving your business something useful each month.",
+    "How will we know what’s working?",
+    "We agree on the actions that matter to your business, such as inquiries, bookings, and purchases. We review what your tools can track alongside your team’s feedback. We don’t guarantee revenue; we use what we learn to guide the next campaigns and improvements.",
   ],
 ];
 
 export default function Home() {
-  const deliveryEnabled =
-    process.env.CONTACT_DELIVERY === "resend" &&
-    Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_FROM_EMAIL);
   return (
     <>
       <Header />
@@ -47,439 +64,309 @@ export default function Home() {
         <section className="hero container" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              <span className="status-dot" /> CUSTOMER COMMUNICATION, HANDLED.
+              <span className="status-dot" /> MANAGED BY NICK & BRIDGETTE
             </p>
             <h1 id="hero-title">
-              We keep your
-              <br />
-              business
-              <br />
-              <span className="underline-accent">in touch.</span>
+              We set up and manage{" "}
+              <span className="hero-highlight">email and text marketing</span>{" "}
+              for your leads and customers.
             </h1>
             <p className="hero-description">
-              Emails, texts, newsletters, and the follow-up in between. We plan,
-              write, and manage them so staying in touch doesn’t keep landing
-              back on your list.
+              We plan, write, and send newsletters, promotions, and automated
+              follow-up to help turn inquiries into sales and bring customers
+              back.
+            </p>
+            <p className="hero-takeover">
+              We can take over an existing program or help you get started.
             </p>
             <div className="hero-actions">
-              <a className="button" href="#review">
-                Let’s look at your follow-up <Arrow diagonal />
+              <a className="button button-coral" href="#contact">
+                Let’s talk <Arrow diagonal />
               </a>
               <a className="text-link" href="#services">
-                See what we handle <span aria-hidden="true">↓</span>
+                See what we handle <Arrow />
               </a>
             </div>
             <p className="small-note">
-              Start with a free, 20-minute conversation.
+              Start with a 20-minute conversation about your business.
             </p>
           </div>
           <SailArt />
         </section>
-        <div className="service-strip" aria-label="Our services">
-          <div className="container">
-            <span>EMAIL MARKETING</span>
-            <span className="strip-star" aria-hidden="true">
-              ✳
-            </span>
+
+        <div className="service-strip" aria-label="What we manage">
+          <div className="container strip-inner">
+            <span>NEWSLETTERS</span>
+            <span aria-hidden="true">↗</span>
             <span>TEXT CAMPAIGNS</span>
-            <span className="strip-star" aria-hidden="true">
-              ✳
-            </span>
-            <span>FLOWS & AUTOMATIONS</span>
-            <span className="strip-star" aria-hidden="true">
-              ✳
-            </span>
+            <span aria-hidden="true">↗</span>
+            <span>AUTOMATED FOLLOW-UP</span>
+            <span aria-hidden="true">↗</span>
             <span>ONGOING MANAGEMENT</span>
           </div>
         </div>
-        <section className="section container problem">
-          <div>
-            <p className="eyebrow">SOUND FAMILIAR?</p>
-            <h2>
-              “We really should
-              <br />
-              be keeping up
-              <br />
-              with this.”
-            </h2>
-            <p className="section-intro">
-              Past customers. People who asked for a quote. Subscribers who
-              haven’t heard from you in months. You already have people to talk
-              to.
-            </p>
-          </div>
-          <div className="problem-list">
-            {[
-              [
-                "01",
-                "The newsletter keeps getting put off.",
-                "You have something useful to say. Finding the time to write it, build it, and send it is another story.",
-              ],
-              [
-                "02",
-                "Follow-up depends on someone remembering.",
-                "An inquiry goes quiet. A customer hasn’t been back. There’s no clear plan for what happens next.",
-              ],
-              [
-                "03",
-                "Your software could be doing more.",
-                "You’re paying for tools with useful features, but setting them up keeps sliding down the list.",
-              ],
-            ].map(([n, title, body]) => (
-              <div className="problem-row" key={n}>
-                <span className="number">{n}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section id="services" className="services-section section">
-          <div className="container">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">HERE’S WHERE WE COME IN</p>
-                <h2>
-                  The messages. The setup.
-                  <br />
-                  <em>The keeping it going.</em>
-                </h2>
-              </div>
-              <p>
-                We take responsibility for the communication you want
-                happening—using the tools you have, wherever practical.
-              </p>
-            </div>
-            <div className="service-rows">
-              {[
-                {
-                  type: "mail" as const,
-                  n: "01",
-                  title: "Emails worth opening.",
-                  body: "A newsletter. A useful update. A reason to come back. We turn what’s happening in your business into emails for the people who should hear about it.",
-                  list: "Planning · Writing · Building · Sending",
-                },
-                {
-                  type: "text" as const,
-                  n: "02",
-                  title: "Texts with a reason.",
-                  body: "Some messages are short, timely, and better sent by text. We help you use that channel thoughtfully, with an appropriate audience and a clear next step.",
-                  list: "Relevant messages · Audience checks · Timing",
-                },
-                {
-                  type: "flow" as const,
-                  n: "03",
-                  title: "Follow-up that follows through.",
-                  body: "A welcome after an inquiry. A check-in after a purchase. A review request or an invitation back. We set up the useful follow-up and keep an eye on how it works.",
-                  list: "Automations · Reply routing · Ongoing checks",
-                },
-              ].map((s) => (
-                <article
-                  className={`service-row service-${s.type}`}
-                  key={s.type}
-                >
-                  <div className="service-icon">
-                    <ChannelIcon type={s.type} />
-                  </div>
-                  <div className="service-name">
-                    <span className="micro">{s.n} / WHAT WE HANDLE</span>
-                    <h3>{s.title}</h3>
-                  </div>
-                  <div className="service-body">
-                    <p>{s.body}</p>
-                    <p className="service-tasks">{s.list}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <div className="scope-note">
-              <span className="scope-mark" aria-hidden="true">
-                ↗
-              </span>
-              <p>
-                <strong>One agreed plan. Someone responsible for it.</strong> We
-                define the tools, priorities, and cadence together. If the work
-                grows, we agree on the change first.
-              </p>
-            </div>
-          </div>
-        </section>
-        <section className="section container process">
+
+        <section
+          id="services"
+          className="section container opportunities-section"
+          aria-labelledby="opportunities-title"
+        >
           <div className="section-heading">
             <div>
-              <p className="eyebrow">A SIMPLE WAY TO START</p>
-              <h2>
-                Off your list.
-                <br />
-                Into a routine.
+              <p className="eyebrow">WHY KEEPING IN TOUCH MATTERS</p>
+              <h2 id="opportunities-title">
+                Make more of your leads and customer relationships.
               </h2>
             </div>
             <p>
-              You keep your accounts and your customer relationships. We make
-              the communication easier to keep up with.
+              You already put work into attracting people to your business.
+              Email and text help you stay useful, explain what you offer, and
+              give them a clear next step.
             </p>
           </div>
-          <div className="process-grid">
-            {[
-              [
-                "01",
-                "Look at what you have.",
-                "Your customers, inquiries, messages, and tools. We find out what’s already working and what’s being missed.",
-              ],
-              [
-                "02",
-                "Pick the first priorities.",
-                "We agree on the useful work, the scope, and what needs your approval. Then we put a plan around it.",
-              ],
-              [
-                "03",
-                "Get the messages out.",
-                "We write, build, check, and schedule. You give us the business context and sign off where needed.",
-              ],
-              [
-                "04",
-                "Keep paying attention.",
-                "We check the flows, plan the next messages, and review responses and trackable actions with you.",
-              ],
-            ].map(([n, t, b]) => (
-              <div className="process-step" key={n}>
-                <span className="step-number">{n}</span>
-                <h3>{t}</h3>
-                <p>{b}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="handoff">
-          <div className="container handoff-inner">
-            <div>
-              <p className="eyebrow">THE HANDOFF IS PART OF THE PLAN</p>
-              <h2>
-                We manage the messages.
-                <br />
-                <span>You handle the conversations.</span>
-              </h2>
-            </div>
-            <p>
-              When someone replies, your team takes it from there: quotes,
-              bookings, sales, and customer service. We agree on where those
-              replies go before anything goes out.
-            </p>
-          </div>
-        </section>
-        <section id="work" className="section container work-section">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">A FEW EXAMPLES OF THE WORK</p>
-              <h2>
-                Different businesses.
-                <br />
-                Real things to take care of.
-              </h2>
-            </div>
-            <p>
-              From writing the next email to helping the software do its job,
-              this is the kind of work Nick already handles.
-            </p>
-          </div>
-          <div className="work-grid">
-            {cases.map((c, i) => (
-              <article className={`work-card work-${c.id}`} key={c.id}>
-                <div className="work-visual" aria-hidden="true">
-                  <div className="sample-paper">
-                    <span className="micro">
-                      {i === 0
-                        ? "FROM YOUR ADVISOR"
-                        : i === 1
-                          ? "A QUICK QUESTION"
-                          : "KEEPING YOU IN THE LOOP"}
-                    </span>
-                    <div className="sample-rule" />
-                    <strong>
-                      {i === 0 ? (
-                        <>
-                          A little clarity
-                          <br />
-                          for your inbox.
-                        </>
-                      ) : i === 1 ? (
-                        <>
-                          The right person.
-                          <br />A clear introduction.
-                        </>
-                      ) : (
-                        <>
-                          Something new.
-                          <br />A clear next step.
-                        </>
-                      )}
-                    </strong>
-                    {i === 0 ? (
-                      <div className="sample-chart">
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                      </div>
-                    ) : i === 1 ? (
-                      <div className="sample-lines">
-                        <span />
-                        <span />
-                        <span />
-                      </div>
-                    ) : (
-                      <span className="sample-cta">
-                        See what’s happening <Arrow />
-                      </span>
-                    )}
-                  </div>
-                  <span className="sample-tag">
-                    {i === 0 ? "EMAIL" : i === 1 ? "OUTREACH" : "EMAIL + TEXT"}
-                  </span>
+          <div className="opportunity-grid">
+            {opportunities.map((item) => (
+              <article className="opportunity-card" key={item.number}>
+                <div className="opportunity-top">
+                  <ChannelIcon type={item.icon} />
+                  <span>{item.number}</span>
                 </div>
-                <div className="work-copy">
-                  <p className="micro">{c.sector}</p>
-                  <h3>{c.title}</h3>
-                  <p>{c.summary}</p>
-                  <div className="tags">
-                    {c.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  <details className="case-detail">
-                    <summary>
-                      See the work{" "}
-                      <span className="details-plus" aria-hidden="true">
-                        +
-                      </span>
-                    </summary>
-                    <div>
-                      <h4>The need</h4>
-                      <p>{c.need}</p>
-                      <h4>The work</h4>
-                      <p>{c.work}</p>
-                      <h4>The handoff</h4>
-                      <p>{c.handoff}</p>
-                      <p className="case-note">{c.note}</p>
-                    </div>
-                  </details>
-                </div>
+                <p className="card-label">{item.label}</p>
+                <h3>{item.title}</h3>
+                <p className="opportunity-description">{item.description}</p>
+                <p className="opportunity-example">{item.example}</p>
               </article>
             ))}
           </div>
-          <p className="work-footnote">
-            Client names are omitted. Illustrations are representative, not
-            screenshots or performance reports.
-          </p>
-        </section>
-        <Opportunity />
-        <section id="about" className="section container about">
-          <div
-            className="team-art"
-            aria-label="Nick and Bridgette, the people behind Inbox Tuna"
-          >
-            <div className="team-topline">
-              <span className="micro">YOUR PEOPLE AT INBOX TUNA</span>
-              <Fish />
-            </div>
-            <div className="team-names">
-              Nick.
-              <br />
-              Bridgette.
-              <br />
-              <span>Your people.</span>
-            </div>
-            <div className="team-stripes" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
-            <p className="micro">
-              BASED IN HOLLYWOOD, FLORIDA.
-              <br />A LITTLE COASTAL ENERGY INCLUDED.
-            </p>
-          </div>
-          <div className="about-copy">
-            <p className="eyebrow">HI, WE’RE NICK & BRIDGETTE.</p>
-            <h2>
-              Good at the work.
-              <br />
-              Easy to talk to.
-            </h2>
+          <div className="next-campaign">
             <p>
-              We like getting to know a business, figuring out what would help,
-              and getting it done.
+              Have a newsletter to hand over, a service to promote, or follow-up
+              to put in place?
             </p>
-            <p>
-              Nick brings the writing, marketing, and technical know-how.
-              Bridgette brings the organization, follow-through, and a way with
-              people. Together, we keep the details moving.
-            </p>
-            <p>
-              You’ll know who’s handling the work. And you’ll be able to have a
-              normal conversation with us about it.
-            </p>
-            <a className="text-link" href="#review">
-              Tell us about your business <Arrow diagonal />
+            <a className="text-link" href="#contact">
+              Let’s start there <Arrow />
             </a>
           </div>
         </section>
-        <section className="faq-section section">
-          <div className="container faq-layout">
-            <div>
-              <p className="eyebrow">A FEW FAIR QUESTIONS</p>
-              <h2>
-                Before we
-                <br />
-                say hello.
-              </h2>
+
+        <section
+          id="work"
+          className="section work-section"
+          aria-labelledby="work-title"
+        >
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">CLIENT EXPERIENCE</p>
+                <h2 id="work-title">Work Nick already handles.</h2>
+              </div>
+              <p>
+                Two examples from Nick’s client work. The writing, the practical
+                details, and a clear role for the client.
+              </p>
             </div>
-            <div className="faq-list">
-              {faqs.map(([q, a]) => (
-                <details key={q}>
-                  <summary>
-                    {q}
-                    <span className="details-plus" aria-hidden="true">
-                      +
-                    </span>
-                  </summary>
-                  <p>{a}</p>
-                </details>
-              ))}
+            <div className="work-grid">
+              <article className="work-card">
+                <div className="work-label">
+                  <span>FINANCIAL ADVISORY</span>
+                  <ChannelIcon type="mail" />
+                </div>
+                <h3>Client emails the advisor doesn’t have to write.</h3>
+                <p>
+                  Educational emails for different client age groups, with
+                  branded charts and revisions based on the advisor’s feedback.
+                </p>
+                <div className="work-result">
+                  <span>WHAT THE CLIENT HANDS OVER</span>
+                  <p>
+                    The writing and preparation. The advisor provides subject
+                    expertise and approves the content.
+                  </p>
+                </div>
+                <p className="work-credit">
+                  Email work by Nick through WVNDR Media.
+                </p>
+              </article>
+              <article className="work-card work-card-clinic">
+                <div className="work-label">
+                  <span>WELLNESS CLINIC</span>
+                  <ChannelIcon type="text" />
+                </div>
+                <h3>Email and text promotions with a clear next step.</h3>
+                <p>
+                  Copy that explains the clinic’s offers, plus help organizing
+                  selected services and appointment names in its existing
+                  software.
+                </p>
+                <div className="work-result">
+                  <span>WHAT THE CLIENT HANDS OVER</span>
+                  <p>
+                    Promotional copy and selected software setup. The clinic
+                    handles customer replies, bookings, and care.
+                  </p>
+                </div>
+                <p className="work-credit">
+                  Scope: communication and selected booking-system
+                  configuration.
+                </p>
+              </article>
             </div>
           </div>
         </section>
-        <section id="review" className="section review-section">
-          <div className="container review-layout">
-            <div className="review-copy">
-              <p className="eyebrow">LET’S TAKE A LOOK</p>
-              <h2>
-                What’s been
+
+        <section
+          id="how-it-works"
+          className="section container management-section"
+          aria-labelledby="management-title"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">HOW WE WORK</p>
+              <h2 id="management-title">
+                We set it up
                 <br />
-                sitting on
-                <br />
-                <em>your list?</em>
+                and run it.
+              </h2>
+            </div>
+            <p>
+              You get a plan, messages ready to review, and people responsible
+              for getting them out. We work within a scope and schedule agreed
+              with you.
+            </p>
+          </div>
+          <div className="management-board">
+            <article className="management-start">
+              <span className="step-number">01 / GETTING STARTED</span>
+              <h3>Get the right things in place.</h3>
+              <ul>
+                <li>Learn your business, customers, and current messages.</li>
+                <li>Agree on the first campaigns or automations.</li>
+                <li>Set up the tools, audiences, timing, and approvals.</li>
+              </ul>
+            </article>
+            <article className="management-monthly">
+              <span className="step-number">02 / MONTH TO MONTH</span>
+              <h3>Keep the work moving.</h3>
+              <ul>
+                <li>Plan, write, build, and send the agreed campaigns.</li>
+                <li>Check selected automations and update them when needed.</li>
+                <li>Review responses and results to guide the next work.</li>
+              </ul>
+            </article>
+          </div>
+          <p className="management-handoff">
+            <strong>Your part:</strong> share business updates and approve the
+            messages. Your team handles personal replies, sales, and customer
+            service.
+          </p>
+          <div className="tools-section">
+            <div>
+              <h3>We start with the tools you have.</h3>
+              <p>Where practical, we work in your existing accounts.</p>
+            </div>
+            <ul aria-label="Some of the platforms we work with">
+              <li>Mailchimp</li>
+              <li>Constant Contact</li>
+              <li>Klaviyo</li>
+              <li>MailerLite</li>
+              <li>Zenoti</li>
+              <li>Nextech</li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id="about"
+          className="section about-section"
+          aria-labelledby="about-title"
+        >
+          <div className="container about-layout">
+            <div className="people-art" aria-hidden="true">
+              <div className="people-art-top">
+                <span>THE PEOPLE BEHIND INBOX TUNA</span>
+                <Fish />
+              </div>
+              <div className="people-name name-nick">
+                Nick<span>↗</span>
+              </div>
+              <div className="people-name name-bridgette">
+                Bridgette<span>↗</span>
+              </div>
+              <div className="people-art-bottom">
+                <span>HOLLYWOOD, FLORIDA</span>
+                <span>OCEANSIDE CREATIVE SERVICES</span>
+              </div>
+            </div>
+            <div className="about-copy">
+              <p className="eyebrow">A SMALL TEAM YOU’LL GET TO KNOW</p>
+              <h2 id="about-title">
+                You’ll work directly with Nick and Bridgette.
               </h2>
               <p>
-                Tell us a little about your business. We’ll start with a free,
-                20-minute conversation about how you keep in touch and where
-                things fall through.
+                We run Inbox Tuna from Hollywood, Florida. Nick handles the
+                writing, marketing, and technical setup. Bridgette keeps the
+                details and communication organized.
               </p>
-              <ul className="review-points">
-                <li>No account access needed to start.</li>
-                <li>One or two useful priorities to consider.</li>
-                <li>An honest answer about whether we can help.</li>
-              </ul>
-              <p className="review-signoff">
-                Talk soon,
+              <p>
+                We like learning how a business works and getting useful things
+                done. You’ll speak with the people handling your work.
+              </p>
+              <a className="text-link" href="#contact">
+                Come meet us <Arrow diagonal />
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="section container faq-layout"
+          aria-labelledby="faq-title"
+        >
+          <div>
+            <p className="eyebrow">A FEW PRACTICAL DETAILS</p>
+            <h2 id="faq-title">Before we talk.</h2>
+          </div>
+          <div className="faq-list">
+            {faqs.map(([question, answer]) => (
+              <details key={question}>
+                <summary>
+                  {question}
+                  <span aria-hidden="true">+</span>
+                </summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          className="section contact-section"
+          aria-labelledby="contact-title"
+        >
+          <div className="container contact-layout">
+            <div className="contact-copy">
+              <p className="eyebrow">20 MINUTES WITH NICK & BRIDGETTE</p>
+              <h2 id="contact-title">
+                Let’s talk about
                 <br />
-                <strong>Nick & Bridgette</strong>
+                your business.
+              </h2>
+              <p>
+                Tell us how you reach your leads and customers today, and what
+                you’d like to improve or hand over.
+              </p>
+              <ul className="conversation-points">
+                <li>We’ll talk through a useful first priority.</li>
+                <li>Explain what we could set up or take over.</li>
+                <li>If there’s a fit, follow with a clear scope and price.</li>
+              </ul>
+              <p className="contact-note">
+                No account access or preparation needed for the first
+                conversation.
               </p>
             </div>
-            <ReviewForm deliveryEnabled={deliveryEnabled} />
+            <ContactCard />
           </div>
         </section>
       </main>
@@ -488,11 +375,7 @@ export default function Home() {
           <Link href="/" aria-label="Inbox Tuna home">
             <Brand />
           </Link>
-          <p>
-            Good communication.
-            <br />
-            Kept going.
-          </p>
+          <p>We keep your business in touch.</p>
           <a className="text-link" href="#hero-title">
             Back to top ↑
           </a>
@@ -503,7 +386,7 @@ export default function Home() {
             Services
           </span>
           <Link href="/privacy">Privacy</Link>
-          <span>Hollywood, FL · Working with businesses everywhere.</span>
+          <span>Hollywood, Florida</span>
         </div>
       </footer>
     </>

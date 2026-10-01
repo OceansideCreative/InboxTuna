@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+
 const archivo = localFont({
   src: "../public/fonts/archivo.woff2",
   variable: "--font-display",
@@ -14,14 +15,14 @@ const dmSans = localFont({
   weight: "100 1000",
 });
 const isPreview = process.env.VERCEL_ENV !== "production";
+const title = "Inbox Tuna — Email & Text Marketing, Managed for You";
+const description =
+  "We set up and manage email and text marketing for your leads and customers. Newsletters, promotions, and automated follow-up by Nick and Bridgette.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.inboxtuna.com"),
-  title: {
-    default: "Inbox Tuna — We keep your business in touch.",
-    template: "%s | Inbox Tuna",
-  },
-  description:
-    "Emails, texts, newsletters, and follow-up, managed by Nick and Bridgette. We help your business keep in touch with customers and the people who’ve asked about you.",
+  title: { default: title, template: "%s | Inbox Tuna" },
+  description,
   alternates: { canonical: "/" },
   robots: isPreview
     ? { index: false, follow: false }
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Inbox Tuna",
-    title: "We keep your business in touch.",
-    description: "Emails. Texts. Newsletters. Follow-up. Handled.",
+    title,
+    description,
     images: [
       {
         url: "/social-card.png",
@@ -44,10 +45,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Inbox Tuna — We keep your business in touch.",
+    title,
+    description,
     images: ["/social-card.png"],
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {

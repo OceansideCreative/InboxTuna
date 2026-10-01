@@ -184,8 +184,8 @@ export function SailArt() {
         <span className="sticker-dot" />
       </div>
       <div className="art-caption">
-        <span>LESS ON YOUR LIST.</span>
-        <span>MORE IN TOUCH. ↗</span>
+        <span>EMAIL. TEXT. FOLLOW-UP.</span>
+        <span>NICK & BRIDGETTE ↗</span>
       </div>
     </div>
   );

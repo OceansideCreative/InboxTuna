@@ -38,7 +38,7 @@ export function Header() {
           aria-label="Main navigation"
         >
           <Link href="/#services" onClick={() => setOpen(false)}>
-            What we do
+            How we help
           </Link>
           <Link href="/#work" onClick={() => setOpen(false)}>
             Our work
@@ -48,7 +48,7 @@ export function Header() {
           </Link>
           <Link
             className="button button-small"
-            href="/#review"
+            href="/#contact"
             onClick={() => setOpen(false)}
           >
             Let’s talk <Arrow diagonal />
